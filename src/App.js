@@ -4,8 +4,7 @@ import { useCallback, useState } from 'react';
 function App() {
   const [response, setResponse] = useState();
   const handleClick = useCallback(() => {
-    console.log(axios)
-    axios.get('http://localhost:3001/profile').then(setResponse)
+    axios.get('/profile').then(setResponse)
   }, []);
   return (
     <div className="App">

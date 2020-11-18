@@ -2,8 +2,7 @@
 
 context('Actions', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000/')
-    // cy.visit('/')
+    cy.visit('/')
   })
 
   it('can click the button without stubbing', () => {
@@ -20,9 +19,9 @@ context('Actions', () => {
   })
 
   it('can spy using route2', () => {
-    cy.route2({ pathname: '/profile' }).as('profile')
+    cy.route2('/profile').as('profile')
     cy.get('button').click()
     cy.wait('@profile')
-    cy.get('pre').should(pre => expect(pre).to.contain('fake'))
+    cy.get('pre').should(pre => expect(pre).to.contain('typicode'))
   })
 })
